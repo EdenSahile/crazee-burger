@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
-export default function LoginPage() {
- const [inputValue, setInputValue] = useState("")
+export default function LoginForm() {
+
+  const [inputValue, setInputValue] = useState("")
 
  const handleChange=(e)=>setInputValue(e.target.value);
   
@@ -13,10 +14,7 @@ export default function LoginPage() {
  }
 
 
-
-
   return (
-   
      <div>
        <h1> Bienvenue chez nous !</h1>
        <h2>Connectez-vous</h2>
@@ -27,4 +25,5 @@ export default function LoginPage() {
       
       </div>
   )
+  
 }
