@@ -3,11 +3,8 @@ import React, { useState } from 'react'
 export default function LoginPage() {
  const [inputValue, setInputValue] = useState("")
 
- const handleChange=(e)=>{
- setInputValue(e.target.value);
+ const handleChange=(e)=>setInputValue(e.target.value);
   
-
- }
 
  const handleSubmit=(e)=>{
   e.preventDefault()
@@ -21,7 +18,7 @@ export default function LoginPage() {
   return (
    
      <div>
-       <h1> Bienvenue chez nous ! </h1>
+       <h1> Bienvenue chez nous !</h1>
        <h2>Connectez-vous</h2>
        <form action="submit" onSubmit={handleSubmit}>
         <input type="text" value={inputValue} placeholder="Entrez votre prénom..."onChange={handleChange}  required/>
