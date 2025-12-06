@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function LoginForm({inputValue,setInputValue}) {
 
@@ -21,7 +22,7 @@ export default function LoginForm({inputValue,setInputValue}) {
        <form action="submit" onSubmit={handleSubmit}>
         <input type="text" value={inputValue} placeholder="Entrez votre prénom..."onChange={handleChange}  required/>
         <button>Accéder à votre espace</button>
-      
+        < Link to="/order">Vers OrderPage</Link>
        </form>
       
       </div>
