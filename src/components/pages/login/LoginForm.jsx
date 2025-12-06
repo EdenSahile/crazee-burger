@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
-export default function LoginForm() {
+export default function LoginForm({inputValue,setInputValue}) {
 
-  const [inputValue, setInputValue] = useState("")
 
  const handleChange=(e)=>setInputValue(e.target.value);
   
 
  const handleSubmit=(e)=>{
   e.preventDefault()
-   alert(`Bonjour ${inputValue}`)
+  
+  
  setInputValue("");
  }
 
@@ -21,6 +21,7 @@ export default function LoginForm() {
        <form action="submit" onSubmit={handleSubmit}>
         <input type="text" value={inputValue} placeholder="Entrez votre prénom..."onChange={handleChange}  required/>
         <button>Accéder à votre espace</button>
+      
        </form>
       
       </div>

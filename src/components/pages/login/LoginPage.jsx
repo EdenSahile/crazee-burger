@@ -4,9 +4,10 @@ import LoginForm from "./LoginForm"
 
 
 export default function LoginPage() {
+   const [inputValue, setInputValue] = useState("")
 
   return (
-<LoginForm/>
+<LoginForm inputValue={inputValue} setInputValue={setInputValue}/>
 
   )
 }
