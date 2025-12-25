@@ -16,43 +16,44 @@ export default function LoginForm({ inputValue, setInputValue }) {
   };
 
   return (
-    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
-      <div className="container-text">
-        <h1> Bienvenue chez nous!</h1>
-        <hr />
-        <h2>Connectez-vous</h2>
-      </div>
-
-      <div className="cta-container">
-        <input
-          type="text"
-          value={inputValue}
-          placeholder="Entrez votre prénom..."
-          onChange={handleChange}
-          required
-        />
-
-        <button>Accéder à votre espace</button>
-      </div>
-    </LoginFormStyled>
+    <div>
+   
+      <LoginFormStyled action="submit" onSubmit={handleSubmit}>
+        <div className="container-text">
+          <h1> Bienvenue chez nous!</h1>
+          <hr />
+          <h2>Connectez-vous</h2>
+        </div>
+      
+        <div className="cta-container">
+          <input
+            type="text"
+            value={inputValue}
+            placeholder="Entrez votre prénom..."
+            onChange={handleChange}
+            required
+          />
+      
+          <button>Accéder à votre espace</button>
+        </div>
+      </LoginFormStyled>
+    </div>
   );
 }
 
 const LoginFormStyled = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  margin: 0 auto;
 
   width: 464px;
   height: 438px;
-  border: 1px solid black;
+
+
 
   .container-text {
     font-family: "Amatic SC", sans-serif;
     font-weight: ${theme.weights.bold};
+    color:${theme.colors.white};
+
 
     h1 {
       font-size: ${theme.fonts.P5};
