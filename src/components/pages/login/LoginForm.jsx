@@ -49,11 +49,6 @@ export default function LoginForm({ inputValue, setInputValue }) {
 const LoginFormStyled = styled.form`
 
 
-  width: 464px;
-  height: 438px;
-
-
-
   .container-text {
     font-family: "Amatic SC", sans-serif;
     font-weight: ${theme.weights.bold};
