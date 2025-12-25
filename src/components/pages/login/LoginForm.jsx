@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../theme";
+import { BsPersonCircle } from "react-icons/bs";
+
 
 export default function LoginForm({ inputValue, setInputValue }) {
   
@@ -16,7 +18,7 @@ export default function LoginForm({ inputValue, setInputValue }) {
   };
 
   return (
-    <div>
+    
    
       <LoginFormStyled action="submit" onSubmit={handleSubmit}>
         <div className="container-text">
@@ -25,19 +27,22 @@ export default function LoginForm({ inputValue, setInputValue }) {
           <h2>Connectez-vous</h2>
         </div>
       
-        <div className="cta-container">
-          <input
-            type="text"
-            value={inputValue}
-            placeholder="Entrez votre prénom..."
-            onChange={handleChange}
-            required
-          />
+        <div >
+          <div className="input-with-icon">
+            <BsPersonCircle className="icon" />
+            <input
+              type="text"
+              value={inputValue}
+              placeholder="Entrez votre prénom..."
+              onChange={handleChange}
+              required
+            />
+          </div>
       
           <button>Accéder à votre espace</button>
         </div>
       </LoginFormStyled>
-    </div>
+    
   );
 }
 
@@ -66,21 +71,34 @@ const LoginFormStyled = styled.form`
     }
   }
 
-  .cta-container {
-    display: flex;
-    flex-direction: column;
-     align-items: center;
-    gap: 12.8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: ${theme.fonts.P0};
-
-    input {
-      width: 400px;
-      height: 55px;
-      background-color: ${theme.colors.white};
+    .input-with-icon{
+      background-color: #fff;
       border-radius: ${theme.borderRadius.round};
-      border:1px solid grey
+      display: flex;
+      align-items: center;
+      padding:18px 24px;
+      margin:18px 0;
+      
+   
+      .icon{
+        font-size:15px;
+        margin-right: 8px;
+        color:#93a2b1
+      }
+      input {
+      font-size: 15px;
+      color:#17161a;
+      
+      border:none;
     }
+
+    ::placeholder{
+      background: white;
+      color:lightgrey
+    }
+
+  }
+
 
     button {
       border: 1px solid purple;
@@ -92,5 +110,6 @@ const LoginFormStyled = styled.form`
       border: 1px solid ${theme.colors.primary_burger};
       border-radius: ${theme.borderRadius.round};
     }
-  }
+
+
 `;
