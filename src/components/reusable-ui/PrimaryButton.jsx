@@ -1,22 +1,18 @@
-import React from "react";
-import { theme } from "../../../theme";
+import { theme } from "../../theme";
 import styled from "styled-components";
-import { IoChevronForward } from "react-icons/io5";
 
-export default function ButtonLogin() {
+export default function PrimaryButton({label,icon}) {
   return (
-    <ButtonLoginStyled>
-      <button className="button-with-icon">
-        <span> Accéder à votre espace</span>
-        <IoChevronForward className="icon" />
-      </button>
-    </ButtonLoginStyled>
+    <>
+      <ButtonLoginStyled> 
+        <span>{label}</span>
+        {icon && icon}
+      </ButtonLoginStyled>
+    </>
   );
 }
 
-const ButtonLoginStyled=styled.div`
-
- .button-with-icon {
+const ButtonLoginStyled=styled.button`
     width: 100%;
     display: inline-flex;
     justify-content: center;
@@ -50,13 +46,7 @@ align-items: center;
       cursor: not-allowed;
     }
 
-    .icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    margin-left: 10px;
-  }
-}
+
+
 
 `

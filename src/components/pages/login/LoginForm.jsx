@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { theme } from "../../../theme";
+import { theme } from "../../../theme/index";
 import styled from "styled-components";
-import TextInput from "./TextInput";
-import ButtonLogin from "./ButtonLogin";
 import { BsPersonCircle } from "react-icons/bs";
+import TextInput from "../../reusable-ui/TextInput";
+import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import { IoChevronForward } from "react-icons/io5";
+
+
+
 
 
 export default function LoginForm({ inputValue, setInputValue }) {
@@ -30,11 +34,15 @@ export default function LoginForm({ inputValue, setInputValue }) {
       <TextInput type="text"
                value={inputValue}
                onChange={handleChange}
-               placeholder={"Entrez votre prénom..."}
+               placeholder="Entrez votre prénom..."
                required
                icon={<BsPersonCircle className="icon" />}
                />
-      <ButtonLogin />
+      <PrimaryButton 
+      label={"Accéder à mon espace" }
+      icon={ <IoChevronForward className="icon" />}/>
+    
+
     </LoginFormStyled>
   );
 }
@@ -58,6 +66,17 @@ const LoginFormStyled = styled.form`
     }
   
   }
+      .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+
+  
+  
 
 `
 
