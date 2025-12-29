@@ -1,57 +1,41 @@
-import React from 'react'
+import React from "react";
 import { theme } from "../../theme";
 import styled from "styled-components";
 
-
-export default function TextInput({value,onChange,icon,...extraProps}) {
-
-
+export default function TextInput({ value, onChange, icon, ...extraProps }) {
   return (
-           <InputLoginStyled>
-            {icon && icon}
-             <input
-               type="text"
-               value={value}
-               onChange={onChange}
-               {...extraProps}
-             
-             />
-           </InputLoginStyled>
-  )
+    <InputLoginStyled>
+      {icon && icon}
+      <input type="text" value={value} onChange={onChange} {...extraProps} />
+    </InputLoginStyled>
+  );
 }
 
-const InputLoginStyled=styled.div`
- 
-    background-color: #fff;
-    border-radius: ${theme.borderRadius.round};
-    display: flex;
-    align-items: center;
-    padding: 18px 24px;
-    margin: 18px 0;
+const InputLoginStyled = styled.div`
+  background-color: ${theme.colors.white};
+  border-radius: ${theme.borderRadius.round};
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  margin: 18px 0;
 
-    .icon {
-      font-size: 15px;
-      margin-right: 8px;
-      color: #93a2b1
+  .icon {
+    font-size: ${theme.fonts.size.P0};
+    margin-right: ${theme.gridUnit};
+    color: ${theme.colors.greySemiDark};
+    padding-right: 8px;
+  }
+
+  input {
+    font-size: ${theme.fonts.size.P0};
+    color: ${theme.colors.dark};
+    width: 100%;
+
+    border: none;
+
+    & ::placeholder {
+      background: ${theme.colors.white};
+      color: ${theme.colors.greyMedium};
     }
-
- 
-
-    input {
-      font-size: 15px;
-      color: #17161a;
-      width: 100%;
-
-      border: none;
-    }
-
-    ::placeholder {
-      background: white;
-      color: lightgrey;
-    }
- 
-  
-  
- 
-
-`
+  }
+`;

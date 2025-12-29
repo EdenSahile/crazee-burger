@@ -1,34 +1,36 @@
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import styled from "styled-components";
+import { theme } from "../../theme";
 
-export default function Logo({size="200"}) {
+export default function Logo() {
   return (
     <LogoStyled>
-<span className='logoTitle'>CRAZEE</span> 
-< img src='/logo/logo-orange.png' width={size}/>
+      <span className="logoTitle">CRAZEE</span>
+      <img src="../../../public/logo/logo-orange.png" />
 
-<span className='logoTitle'>BURGER</span>
+      <span className="logoTitle">BURGER</span>
     </LogoStyled>
-  )
+  );
 }
-
 
 const LogoStyled = styled.div`
+  display: flex;
+  align-items: center;
+transform: scale(2.5); 
 
-    display: flex;
-    align-items: center;
-  
+  .logoTitle {
+    color: ${theme.colors.primary};
+    font-size: ${theme.fonts.size.P4};
+    font-weight: ${theme.fonts.weights.bold};
+    letter-spacing: 1.5px;
+    vertical-align: top;
 
-.logoTitle{
-  color:${theme.colors.primary};
-  font-size: 8rem;
-  font-weight: ${theme.weights.bold};
-  letter-spacing: 1.5px;
-  vertical-align:top;
+    font-family: "Amatic SC", sans-serif;
+  }
 
-  font-family: "Amatic SC", sans-serif;
-
-}
-  
+  img {
+    object-fit: contain;
+    object-position: center;
+    width: 80px;
+    margin: 0 ${theme.gridUnit / 2};
+  }
 `;
-

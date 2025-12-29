@@ -22,14 +22,12 @@ const LoginPageStyled = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  
 
 
-  ::before {
+  &::before {
     content: "";
-    background: 
-    url("../../../../public/image/burger-background.jpg"),
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background: url("/image/burger-background.jpg"),
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-blend-mode: darken;
     background-size: cover;
     position: absolute;
