@@ -4,11 +4,10 @@ import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
 
 
-export default function InputLogin({inputValue,setInputValue}) {
+export default function InputLogin({inputValue,handleChange}) {
 
 
   
-  const handleChange = (e) => setInputValue(e.target.value);
 
   return (
        <InputLoginStyled>

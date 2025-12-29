@@ -8,11 +8,15 @@ export default function LoginForm({ inputValue, setInputValue }) {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+      console.log(inputValue);
     e.preventDefault();
     navigate(`/order/${inputValue}`);
+      
 
-    setInputValue("");
   };
+
+    const handleChange = (e) => setInputValue(e.target.value);
+
 
   return (
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
@@ -21,7 +25,7 @@ export default function LoginForm({ inputValue, setInputValue }) {
         <hr />
         <h2>Connectez-vous</h2>
       </div>
-      <InputLogin inputValue={inputValue} setInputValue={setInputValue} />
+      <InputLogin inputValue={inputValue}  handleChange={handleChange}/>
       <ButtonLogin />
     </LoginFormStyled>
   );
