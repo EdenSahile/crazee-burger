@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { theme } from "../../../theme";
 import styled from "styled-components";
-import InputLogin from "./InputLogin";
+import TextInput from "./TextInput";
 import ButtonLogin from "./ButtonLogin";
 import { BsPersonCircle } from "react-icons/bs";
 
@@ -27,7 +27,7 @@ export default function LoginForm({ inputValue, setInputValue }) {
         <hr />
         <h2>Connectez-vous</h2>
       </div>
-      <InputLogin type="text"
+      <TextInput type="text"
                value={inputValue}
                onChange={handleChange}
                placeholder={"Entrez votre prénom..."}

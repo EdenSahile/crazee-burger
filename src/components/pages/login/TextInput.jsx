@@ -3,7 +3,7 @@ import { theme } from "../../../theme";
 import styled from "styled-components";
 
 
-export default function InputLogin({value,onChange,icon,...extraProps}) {
+export default function TextInput({value,onChange,icon,...extraProps}) {
 
 
   return (
