@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../../reusable-ui/Logo";
-// import { BsPersonCircle } from "react-icons/bs";
+import { BsPersonCircle } from "react-icons/bs";
 
 export default function Navbar({ username }) {
   return (
@@ -20,7 +20,8 @@ export default function Navbar({ username }) {
             <button>Se déconnecter</button>
           </Link>
         </div>
-        <div className="right-side-icon">ICON</div>
+        <div className="right-side-icon"><BsPersonCircle className="icon" />
+</div>
       </div>
     </NavbarStyled>
   );
@@ -43,7 +44,7 @@ const NavbarStyled = styled.nav`
   .right-side {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
   .right-side-userInfo {
     display: flex;
@@ -58,6 +59,7 @@ const NavbarStyled = styled.nav`
 
   .salutation {
     color: #747b91;
+        margin: 0 auto;
 
     font-weight: 400;
   }
@@ -73,5 +75,16 @@ const NavbarStyled = styled.nav`
     color: #747b91;
     background-color: transparent;
     border: none;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+.icon{
+    color:#747B91;
+    width:36px;
+    height: 36px;
+
   }
 `;
