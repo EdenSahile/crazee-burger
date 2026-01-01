@@ -26,6 +26,7 @@ const OrderPageStyled = styled.div`
   justify-content: center;
   align-items: center;
   padding: 25px;
+  font-family: "Open Sans", sans-serif;
 
  .container {
     max-width: 1400px;

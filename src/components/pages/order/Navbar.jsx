@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "../../reusable-ui/Logo"
 
 export default function Navbar({ username }) {
 
@@ -7,9 +8,9 @@ export default function Navbar({ username }) {
     <NavbarStyled>
       
       <div className="left-side">
-       LOGO
+      <Logo />
         </div>
-      NAV
+     
       <div className="right-side">
         <div className="right-side-name">
         <h1> Bonjour {username}</h1>
@@ -29,15 +30,21 @@ export default function Navbar({ username }) {
 }
 
 const NavbarStyled = styled.nav`
-     border:3px solid green;
+    background-color: white;
 
  display: flex;
  justify-content: space-between;
 align-items: center;
- padding: 20px 30px;
+padding:0 70px 0 20px;
+ height: 98.19px;
+ border-radius: 15px 15px 0 0;
 
  .left-side{
-  border:2px solid red;
+  transform: scale(0.4);
+ 
+
+
+  
  }
 
 .right-side{
