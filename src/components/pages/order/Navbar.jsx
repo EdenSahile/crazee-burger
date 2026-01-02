@@ -8,7 +8,7 @@ export default function Navbar({ username }) {
   return (
     <NavbarStyled>
       <div className="left-side">
-        <Logo />
+        <Logo/>
       </div>
 
       <div className="right-side">
@@ -35,11 +35,11 @@ const NavbarStyled = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 70px 0 20px;
-  height: 98.19px;
-  border-radius: ${theme.borderRadius.extraRound}px ${theme.borderRadius.extraRound}px 0 0;
+  height: 10vh;
+  border-radius: ${theme.borderRadius.extraRound}px  ${theme.borderRadius.extraRound}px 0 0;
 
   .left-side {
-    transform: scale(0.4);
+    cursor: pointer;
   }
 
   .right-side {
