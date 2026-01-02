@@ -7,11 +7,8 @@ import { refreshPage } from "../../../utils/window";
 export default function Navbar({ username }) {
   return (
     <NavbarStyled>
-      
-        <Logo onClick={refreshPage} className={"logo-order-page"}/>
-      
-<NavbarRightSide username={username}/>
-   
+      <Logo onClick={refreshPage} className={"logo-order-page"} />
+      <NavbarRightSide username={username} />
     </NavbarStyled>
   );
 }
@@ -24,15 +21,13 @@ const NavbarStyled = styled.nav`
   align-items: center;
   padding: 0 70px 0 20px;
   height: 10vh;
-  border-radius: ${theme.borderRadius.extraRound}px  ${theme.borderRadius.extraRound}px 0 0;
-
+  border-radius: ${theme.borderRadius.extraRound}px
+    ${theme.borderRadius.extraRound}px 0 0;
 
   h1 {
     font-size: 16px;
     line-height: 22px;
   }
-
-  
 
   button {
     font-family: "Open Sans", sans-serif;
@@ -42,19 +37,17 @@ const NavbarStyled = styled.nav`
     background-color: transparent;
     border: none;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
-
   }
-.iconProfile{
-    color:${theme.colors.greyBlue};
-    width:36px;
+  .iconProfile {
+    color: ${theme.colors.greyBlue};
+    width: 36px;
     height: 36px;
-
   }
 
-  .logo-order-page{
+  .logo-order-page {
     cursor: pointer;
   }
 `;

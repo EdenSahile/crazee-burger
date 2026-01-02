@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import LoginPage from "./components/pages/login/LoginPage";
 import OrderPage from "./components/pages/order/OrderPage";
 import { Route, Routes } from "react-router-dom";
