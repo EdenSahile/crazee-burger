@@ -1,22 +1,14 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
-import { BsPersonCircle } from "react-icons/bs";
+import { theme } from "../../../theme";
+import Profile from './Profile';
 
 
 export default function NavbarRightSide({username}) {
   return (
      <NavbarRightStyled  className="right-side">
-        <div className="right-side-userInfo">
-          <h1 className="salutation">
-            {" "}
-            Hey, <span className="userName">{username}</span>
-          </h1>
-          <Link to="/">
-            <button>Se déconnecter</button>
-          </Link>
-        </div>
-        <div className="right-side-icon"><BsPersonCircle className="iconProfile" />
-</div>
+      {/* <div className="admin-button">Admin Button</div> */}
+        <Profile ussername={username}/>
+    
       </NavbarRightStyled>
   )
 }
@@ -26,12 +18,15 @@ const NavbarRightStyled = styled.div`
 
     display: flex;
     align-items: center;
+    padding-right: 50px;
     gap: 10px;
   
-  .right-side-userInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
+
+    /* .admin-button{
+      background: lightblue;
+
+    } */
+
+  
   
 `;

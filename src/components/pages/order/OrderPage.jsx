@@ -20,6 +20,7 @@ export default function OrderPage() {
 const OrderPageStyled = styled.div`
   background-color:${theme.colors.primary};
   height: 100vh;
+  width:100%;
   display: flex;
   justify-content: center;
 
@@ -28,7 +29,7 @@ const OrderPageStyled = styled.div`
   font-family: "Open Sans", sans-serif;
  
  .container {
-  width: 1400px;
+width: 1400px;
 
     height: 95vh;
     background: ${theme.colors.white};

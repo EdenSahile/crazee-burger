@@ -34,17 +34,7 @@ const NavbarStyled = styled.nav`
     line-height: 22px;
   }
 
-  .salutation {
-    color: ${theme.colors.greyBlue};
-        margin: 0 auto;
-
-    font-weight: ${theme.fonts.weights.regular};
-  }
-  .userName {
-    color: ${theme.colors.primary};
-    font-weight:${theme.fonts.weights.bold};
   
-  }
 
   button {
     font-family: "Open Sans", sans-serif;
