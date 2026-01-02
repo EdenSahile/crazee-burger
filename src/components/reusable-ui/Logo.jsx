@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function Logo() {
+export default function Logo({className,onClick}) {
   return (
-    <LogoStyled>
+    <LogoStyled className={className} onClick={onClick}>
       <span className="logoTitle">CRAZEE</span>
       <img src="../../../public/logo/logo-orange.png" />
 
@@ -15,7 +15,6 @@ export default function Logo() {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-transform: scale(2.5); 
 
   .logoTitle {
     color: ${theme.colors.primary};

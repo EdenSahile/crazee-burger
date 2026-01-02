@@ -23,7 +23,7 @@ const InputLoginStyled = styled.div`
     font-size: ${theme.fonts.size.P0};
     margin-right: ${theme.gridUnit};
     color: ${theme.colors.greySemiDark};
-    padding-right: 8px;
+    /* padding-right: 8px; */
   }
 
   input {
@@ -36,6 +36,7 @@ const InputLoginStyled = styled.div`
     & ::placeholder {
       background: ${theme.colors.white};
       color: ${theme.colors.greyMedium};
+     margin-left: 10px;
     }
   }
 `;
