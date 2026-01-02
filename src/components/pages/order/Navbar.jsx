@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../../reusable-ui/Logo";
-import { BsPersonCircle } from "react-icons/bs";
 import { theme } from "../../../theme";
+import NavbarRightSide from "./NavbarRightSide";
 
 export default function Navbar({ username }) {
   return (
@@ -10,20 +9,8 @@ export default function Navbar({ username }) {
       <div className="left-side">
         <Logo/>
       </div>
-
-      <div className="right-side">
-        <div className="right-side-userInfo">
-          <h1 className="salutation">
-            {" "}
-            Hey, <span className="userName">{username}</span>
-          </h1>
-          <Link to="/">
-            <button>Se déconnecter</button>
-          </Link>
-        </div>
-        <div className="right-side-icon"><BsPersonCircle className="iconProfile" />
-</div>
-      </div>
+<NavbarRightSide username={username}/>
+   
     </NavbarStyled>
   );
 }
@@ -40,17 +27,6 @@ const NavbarStyled = styled.nav`
 
   .left-side {
     cursor: pointer;
-  }
-
-  .right-side {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .right-side-userInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
   }
 
   h1 {
