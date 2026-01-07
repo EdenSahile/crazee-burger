@@ -9,7 +9,7 @@ export default function Main() {
 basket 
     </div>
     
-    <div className="menu">
+    <div className="menu"> 
      Menu
     </div>
 
