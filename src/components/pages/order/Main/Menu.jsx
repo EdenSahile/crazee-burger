@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
+import { fakeMenu2 } from "../../../../fakeData/fakeMenu"
 
 export default function Menu() {
-  return (
+
+const [menu, setmenu] = useState(fakeMenu2) 
+
+console.log(menu)
+return (
     <MenuStyled className="menu"> 
-     Menu
+     
+    
+   {menu.map((produit)=>{
+   
+return <div className='produit'>{produit.title}</div>
+   })}
+   
+
+
+  
+
     </MenuStyled>
   )
 }
@@ -12,9 +27,21 @@ export default function Menu() {
 
 const MenuStyled = styled.div`
 
-  background-color:orange;
+  background-color:purple;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-row-gap: 60px;
+  padding:50px 50px 150px;
+  justify-items: center;
 
 
+
+  .produit{
+    background: red;
+    width:240px;
+    height:330px;
+
+  }
   
   
 `
