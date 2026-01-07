@@ -4,7 +4,14 @@ import styled from 'styled-components';
 export default function Main() {
   return (
     <MainStyled>
-      <h1>Main</h1>
+     
+    <div className="basket">
+basket 
+    </div>
+    
+    <div className="menu">
+     Menu
+    </div>
 
     </MainStyled>
   )
@@ -18,10 +25,23 @@ const MainStyled = styled.main`
   border-radius: 0px 0px 15px 15px;
     flex:1;
     overflow-y: auto;
+
+    display: grid;
+  grid-template-columns: 25% 75%;
+
+    padding:10px;
   
   
+.basket{
+ background-color:red;
+  
+}
 
+.menu{
+  background-color:orange;
 
+  flex:1
+}
   
   
   
