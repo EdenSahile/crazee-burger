@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import Menu from './Menu';
 
 export default function Main() {
   return (
@@ -9,9 +10,8 @@ export default function Main() {
 basket 
     </div>
     
-    <div className="menu"> 
-     Menu
-    </div>
+    <Menu/>
+
 
     </MainStyled>
   )
@@ -37,12 +37,7 @@ const MainStyled = styled.main`
   
 }
 
-.menu{
-  background-color:orange;
 
-  flex:1
-}
-  
   
   
 `;
