@@ -6,9 +6,9 @@ export default function Main() {
   return (
     <MainStyled>
      
-    <div className="basket">
+    {/* <div className="basket">
 basket 
-    </div>
+    </div> */}
     
     <Menu/>
 
@@ -27,15 +27,15 @@ const MainStyled = styled.main`
     overflow-y: auto;
 
     display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 1fr;
 
     padding:10px;
   
   
-.basket{
+/* .basket{
  background-color:red;
   
-}
+} */
 
 
   
