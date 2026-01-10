@@ -27,14 +27,4 @@ export default function Product({title,imageSource,price}) {
 
 
  
-   
-
-    
-
-
-   
-   
-  
-  
-  
 // `;
