@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu"
+import { theme } from '../../../../theme';
 
 export default function Menu() {
 
@@ -27,17 +28,21 @@ return <div className='produit'>{produit.title}</div>
 
 const MenuStyled = styled.div`
 
-  background-color:purple;
-  display:grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-row-gap: 60px;
-  padding:50px 50px 150px;
-  justify-items: center;
+  background-color:${theme.colors.background_white };
+  box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+display: grid;
+grid-template-columns: repeat(4,1fr);
+grid-row-gap: 60px;
+justify-items: center;
+  box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+
+ 
 
 
 
   .produit{
-    background: red;
+   
+     box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
     width:240px;
     height:330px;
 
