@@ -2,29 +2,19 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../theme";
+import Product from "./Product";
 
 export default function Menu() {
   const [menu, setmenu] = useState(fakeMenu2);
 
-  console.log(menu);
   return (
     <MenuStyled className="menu">
       {menu.map((produit) => {
-        return (
-          <div className="produit">
-            <div className="image">
-              <img src={produit.imageSource} alt={produit.title} />
-            </div>
-
-            <div className="info-text">
-              <div className="title">{produit.title}</div>
-              <div className="description">
-                <div className="price">{produit.price}</div>
-                <button className="add-button">Ajouter</button>
-              </div>
-            </div>
-          </div>
-        );
+        return <Product
+          title={produit.title}
+          imageSource={produit.imageSource}
+          price={produit.price}
+        />;
       })}
     </MenuStyled>
   );
@@ -42,14 +32,17 @@ const MenuStyled = styled.div`
     box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
     width: 240px;
     height: 330px;
-
     .image {
       width: 100px;
       height: auto;
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
+    }
+    .description {
+      border: 1px solid fuchsia;
     }
   }
 `;
