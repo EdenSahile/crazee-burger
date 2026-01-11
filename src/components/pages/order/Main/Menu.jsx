@@ -28,21 +28,5 @@ const MenuStyled = styled.div`
   grid-row-gap: 60px;
   justify-items: center;
 
-  .produit {
-    box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-    width: 240px;
-    height: 330px;
-    .image {
-      width: 100px;
-      height: auto;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .description {
-      border: 1px solid fuchsia;
-    }
-  }
+
 `;
