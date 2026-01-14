@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Logo from "../../reusable-ui/Logo";
-import { theme } from "../../../theme";
+import Logo from "../../../reusable-ui/Logo";
+import { theme } from "../../../../theme";
 import NavbarRightSide from "./NavbarRightSide";
-import { refreshPage } from "../../../utils/window";
+import { refreshPage } from "../../../../utils/window";
 
 export default function Navbar({ username }) {
   return (
@@ -23,6 +23,7 @@ const NavbarStyled = styled.nav`
   height: 10vh;
   border-radius: ${theme.borderRadius.extraRound}px
     ${theme.borderRadius.extraRound}px 0 0;
+    border-bottom: 1px solid ${theme.colors.greyLight};
 
   h1 {
     font-size: 16px;

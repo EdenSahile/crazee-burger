@@ -16,7 +16,8 @@ const colors = {
   greyDark: "#6f737e",
   greyBlue: "#747b91",
   loginLine: "#f56a2c",
-  loginLine:"#f56a2c"
+  loginLine:"#f56a2c",
+  cardbtn:"#FF9F1B"
 }
 
 const spacing = {
