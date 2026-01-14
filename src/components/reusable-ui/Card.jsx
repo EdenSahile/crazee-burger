@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { theme } from "../../../../theme/index"
-import PrimaryButton from "../../../reusable-ui/PrimaryButton"
-import {formatPrice} from "../../../../utils/maths"
+import { theme } from "../../theme/index"
+import PrimaryButton from "./PrimaryButton"
 
-export default function Card({ title, imageSource, price }) {
+export default function Card({ title, imageSource, leftDescription }) {
   return (
     <CardStyled className="produit">
       <div className="image">
@@ -12,7 +11,7 @@ export default function Card({ title, imageSource, price }) {
       <div className="text-info">
         <div className="title">{title}</div>
         <div className="description">
-          <div className="left-description">{formatPrice(price)}</div>
+          <div className="left-description">{leftDescription}</div>
           <div className="right-description">
             <PrimaryButton  className="primary-button" label={"Ajouter"} />
           </div>
