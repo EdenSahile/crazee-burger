@@ -20,7 +20,7 @@ Contexte : Projet réalisé durant ma formation React.js (presque terminée), av
 💾 Persistance des données - Sauvegarde locale du panier
 
 
-🛠️ ## Stack technique
+## Stack technique
 
 ### Front-end 
 React 19 - Bibliothèque UI avec Hooks
@@ -40,7 +40,8 @@ Vercel - Hébergement et déploiement continu
 
 NPM - Gestionnaire de packages
 
-🎓 ## Compétences développées
+
+## Compétences développées
 
 ✅ Composants React réutilisables
 
