@@ -56,8 +56,8 @@ NPM - Gestionnaire de packages
 ✅ Authentification côté client
 
 
-🚧 Prochaines étapes
-## Phase 2 : TypeScript (En cours de formation)
+## 🚧 Prochaines étapes
+### Phase 2 : TypeScript (En cours de formation)
 
 Migration vers TypeScript
 
@@ -66,7 +66,7 @@ Typage fort des composants et props
 Interfaces et types personnalisés
 
 
-## Phase 3 : Back-end (À venir)
+### Phase 3 : Back-end (À venir)
 
 Node.js + Express - API REST
 
@@ -79,7 +79,7 @@ Prisma - ORM pour requêtes SQL
 Zod - Validation des données
 
 
-## Fonctionnalités prévues
+### Fonctionnalités prévues
 
 🔄 CRUD complet (Create, Read, Update, Delete) des produits
 
