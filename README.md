@@ -1,16 +1,65 @@
-# React + Vite
+# Application web de gestion de commandes pour un restaurant de burgers, développée dans le cadre de ma formation React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📋 À propos du projet
+Crazee Burger est une application de commande en ligne pour un restaurant fictif. Ce projet de formation me permet de mettre en pratique les concepts avancés de React.js et de construire une application complète avec authentification, gestion d'état et interface dynamique.
 
-Currently, two official plugins are available:
+Contexte : Projet réalisé durant ma formation React.js (presque terminée), avec pour objectif d'approfondir ensuite TypeScript et le développement back-end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+✨ ## Fonctionnalités actuelles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔐 Authentification utilisateur - Connexion sécurisée
+🍔 Menu interactif - Affichage dynamique des produits
+🛒 Gestion du panier - Ajout/suppression d'articles
+🎨 Interface moderne - Design responsive et attrayant
+⚡ Performance optimisée - Chargement rapide avec Vite
+💾 Persistance des données - Sauvegarde locale du panier
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ ## Stack technique
+
+### Front-end 
+React 19 - Bibliothèque UI avec Hooks
+React Router - Navigation multi-pages
+Vite - Build tool moderne et rapide
+Styled Components - CSS-in-JS pour un styling modulaire
+React Icons - Icônes vectorielles
+
+###  Déploiement
+
+Vercel - Hébergement et déploiement continu
+NPM - Gestionnaire de packages
+
+🎓 ## Compétences développées
+
+✅ Composants React réutilisables
+✅ Gestion d'état avec Hooks (useState, useEffect, useContext)
+✅ Routing et navigation SPA
+✅ Styled Components et CSS-in-JS
+✅ Formulaires contrôlés
+✅ Authentification côté client
+
+🚧 Prochaines étapes
+## Phase 2 : TypeScript (En cours de formation)
+
+Migration vers TypeScript
+Typage fort des composants et props
+Interfaces et types personnalisés
+
+## Phase 3 : Back-end (À venir)
+
+Node.js + Express - API REST
+PostgreSQL - Base de données relationnelle
+Supabase - Backend-as-a-Service (auth, BDD)
+Prisma - ORM pour requêtes SQL
+Zod - Validation des données
+
+
+## Fonctionnalités prévues
+
+🔄 CRUD complet (Create, Read, Update, Delete) des produits
+👨‍💼 Dashboard administrateur
+📊 Historique des commandes
+🔍 Recherche et filtres avancés
+
+
