@@ -5,8 +5,7 @@ Crazee Burger est une application de commande en ligne pour un restaurant fictif
 
 Contexte : Projet réalisé durant ma formation React.js (presque terminée), avec pour objectif d'approfondir ensuite TypeScript et le développement back-end.
 
-
-✨  ## Fonctionnalités actuelles
+ ## Fonctionnalités actuelles
 
 🔐 Authentification utilisateur - Connexion sécurisée
 
