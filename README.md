@@ -9,6 +9,7 @@ Contexte : Projet réalisé durant ma formation React.js (presque terminée), av
 ✨ ## Fonctionnalités actuelles
 
 🔐 Authentification utilisateur - Connexion sécurisée
+
 🍔 Menu interactif - Affichage dynamique des produits
 🛒 Gestion du panier - Ajout/suppression d'articles
 🎨 Interface moderne - Design responsive et attrayant
