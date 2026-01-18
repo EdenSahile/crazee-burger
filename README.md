@@ -11,9 +11,13 @@ Contexte : Projet réalisé durant ma formation React.js (presque terminée), av
 🔐 Authentification utilisateur - Connexion sécurisée
 
 🍔 Menu interactif - Affichage dynamique des produits
+
 🛒 Gestion du panier - Ajout/suppression d'articles
+
 🎨 Interface moderne - Design responsive et attrayant
+
 ⚡ Performance optimisée - Chargement rapide avec Vite
+
 💾 Persistance des données - Sauvegarde locale du panier
 
 
@@ -21,46 +25,68 @@ Contexte : Projet réalisé durant ma formation React.js (presque terminée), av
 
 ### Front-end 
 React 19 - Bibliothèque UI avec Hooks
+
 React Router - Navigation multi-pages
+
 Vite - Build tool moderne et rapide
+
 Styled Components - CSS-in-JS pour un styling modulaire
+
 React Icons - Icônes vectorielles
+
 
 ###  Déploiement
 
 Vercel - Hébergement et déploiement continu
+
 NPM - Gestionnaire de packages
 
 🎓 ## Compétences développées
 
 ✅ Composants React réutilisables
+
 ✅ Gestion d'état avec Hooks (useState, useEffect, useContext)
+
 ✅ Routing et navigation SPA
+
 ✅ Styled Components et CSS-in-JS
+
 ✅ Formulaires contrôlés
+
 ✅ Authentification côté client
+
 
 🚧 Prochaines étapes
 ## Phase 2 : TypeScript (En cours de formation)
 
 Migration vers TypeScript
+
 Typage fort des composants et props
+
 Interfaces et types personnalisés
+
 
 ## Phase 3 : Back-end (À venir)
 
 Node.js + Express - API REST
+
 PostgreSQL - Base de données relationnelle
+
 Supabase - Backend-as-a-Service (auth, BDD)
+
 Prisma - ORM pour requêtes SQL
+
 Zod - Validation des données
 
 
 ## Fonctionnalités prévues
 
 🔄 CRUD complet (Create, Read, Update, Delete) des produits
+
 👨‍💼 Dashboard administrateur
+
 📊 Historique des commandes
+
 🔍 Recherche et filtres avancés
 
 
