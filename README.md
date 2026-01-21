@@ -13,8 +13,6 @@ Contexte : Projet réalisé durant ma formation React.js (presque terminée), av
 
 🛒 Gestion du panier - Ajout/suppression d'articles
 
-🎨 Interface moderne - Design responsive et attrayant
-
 ⚡ Performance optimisée - Chargement rapide avec Vite
 
 💾 Persistance des données - Sauvegarde locale du panier
