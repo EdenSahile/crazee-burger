@@ -26,7 +26,7 @@ const LoginPageStyled = styled.div`
 
   &::before {
     content: "";
-    background: url("/image/burger-background.jpg"),
+    background: url("images/burger-background.jpg"),
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-blend-mode: darken;
     background-size: cover;
