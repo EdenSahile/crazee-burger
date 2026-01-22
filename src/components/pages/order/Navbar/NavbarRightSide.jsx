@@ -1,32 +1,32 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { theme } from "../../../../theme";
-import Profile from './Profile';
+import Profile from "./Profile";
+import ToogleButton from "../../../reusable-ui/ToggleButton";
+import { useState } from "react";
 
+export default function NavbarRightSide({ username }) {
+  const [isChecked, setIsChecked] = useState(false);
 
-export default function NavbarRightSide({username}) {
+  const onToggle = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
-     <NavbarRightStyled  className="right-side">
-      {/* <div className="admin-button">Admin Button</div> */}
-        <Profile username={username}/>
-    
-      </NavbarRightStyled>
-  )
+    <NavbarRightStyled className="right-side">
+      <ToogleButton
+        labelIfUnchecked="ACTIVER LE MODE ADMIN"
+        labelIfChecked="DESACTIVER LE MODE ADMIN"
+        isChecked={isChecked}
+        onToggle={onToggle}
+      />
+      <Profile username={username} />
+    </NavbarRightStyled>
+  );
 }
 
 const NavbarRightStyled = styled.div`
-
-
-    display: flex;
-    align-items: center;
-    padding-right: 50px;
-    gap: 10px;
-  
-
-    /* .admin-button{
-      background: lightblue;
-
-    } */
-
-  
-  
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+  gap: 10px;
 `;
