@@ -91,6 +91,8 @@ const ToggleButtonStyled = styled.div`
 
     &.toggle:not(:checked) + label {
       background-color: ${theme.colors.background_dark};
+
+      /* background-color: ${theme.colors.background_dark}; */
       /* text-align: right; */
     }
 
