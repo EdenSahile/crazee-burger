@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { theme } from "../../theme/index"
 import PrimaryButton from "./PrimaryButton"
 
+
 export default function Card({ title, imageSource, leftDescription }) {
   return (
     <CardStyled className="produit">
@@ -13,7 +14,7 @@ export default function Card({ title, imageSource, leftDescription }) {
         <div className="description">
           <div className="left-description">{leftDescription}</div>
           <div className="right-description">
-            <PrimaryButton  className="primary-button" label={"Ajouter"} />
+            <PrimaryButton className="primary-button" label={"Ajouter"} />
           </div>
         </div>
       </div>
@@ -23,8 +24,8 @@ export default function Card({ title, imageSource, leftDescription }) {
 
 const CardStyled = styled.div`
   background: ${theme.colors.white};
-  width: 200px;
-  height: 300px;
+  width: 240px;
+  height: 330px;
   display: grid;
   grid-template-rows: 65% 1fr;
   padding: 20px;
@@ -68,17 +69,18 @@ const CardStyled = styled.div`
     .description {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      margin-top: 16px;
 
       .left-description {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-weight: ${theme.fonts.weights.medium};
+        font-weight: ${theme.fonts.weights.regular};
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-weight: ${theme.fonts.weights.medium};
         color: ${theme.colors.primary};
+        
       }
 
       .right-description {
@@ -90,9 +92,16 @@ const CardStyled = styled.div`
         .primary-button {
           font-size: ${theme.fonts.size.XS};
           cursor: pointer;
-          padding: 12px;
+          padding: 10px 24px;
+           width:95px;
+          height: 38px;
+          border-radius:${theme.borderRadius.round};
+       
+          border:1px solid #FF9F1B;
+
         }
       }
     }
   }
 `
+

@@ -33,7 +33,7 @@ const InputLoginStyled = styled.div`
 
     border: none;
 
-    & ::placeholder {
+    &::placeholder {
       background: ${theme.colors.white};
       color: ${theme.colors.greyMedium};
      margin-left: 10px;

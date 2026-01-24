@@ -22,7 +22,7 @@ const NavbarStyled = styled.nav`
   padding: 0 70px 0 20px;
   height: 10vh;
   border-radius: ${theme.borderRadius.extraRound}px
-    ${theme.borderRadius.extraRound}px 0 0;
+    ${theme.borderRadius.extraRound} 0 0;
     border-bottom: 1px solid ${theme.colors.greyLight};
 
   h1 {
