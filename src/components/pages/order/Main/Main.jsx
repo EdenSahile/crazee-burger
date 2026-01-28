@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
+import Admin from "./Admin/Admin";
 
 export default function Main() {
   return (
@@ -8,7 +9,7 @@ export default function Main() {
       {/* <div className="basket">basket</div> */}
       <div className="menu-and-admin">
         <Menu />
-        <div className="admin"></div>
+        <Admin />
       </div>
     </MainStyled>
   );
@@ -36,26 +37,5 @@ const MainStyled = styled.main`
     overflow-y: hidden;
     display: grid;
     border-radius: 0px 0px 15px 15px;
-
-    .admin {
-      background-color: red;
-      height: 250px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
   }
-
-  /* .tabs {
-    border: 2px solid blue;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .admin-panel {
-    border: 2px solid green;
-    flex: 1;
-  } */
 `;
