@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function Tab({ icon, className, onClick }) {
+export default function Tab({ icon, className, onClick, label }) {
   return (
     <TabStyled className={className} onClick={onClick}>
       <div className="icon">
         {" "}
         {icon && icon}
-        {/* <p>{label}</p> */}
+        {label && <span className="label">{label}</span>}
       </div>
     </TabStyled>
   );
@@ -50,6 +50,9 @@ const TabStyled = styled.button`
   .icon {
     display: flex;
     align-items: center;
-    gap: 1px;
+  }
+
+  .label {
+    margin-left: 13px;
   }
 `;

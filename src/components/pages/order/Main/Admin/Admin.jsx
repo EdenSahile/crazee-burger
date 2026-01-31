@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function Admin() {
   const [isCollapsed, setIsCollapsed] = useState(false);
-
   return (
     <AdminStyled>
       <AdminTabs isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
