@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function Tab({ icon, className, onClick, label }) {
+export default function Tab({ icon, className, onclick, label }) {
   return (
-    <TabStyled className={className} onClick={onClick}>
+    <TabStyled className={className} onClick={onclick}>
       <div className="icon">
         {" "}
         {icon && icon}

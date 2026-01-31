@@ -4,12 +4,12 @@ import { theme } from "../../../../../theme";
 import OrderContext from "../../../../../Context/OrderContext";
 
 export default function AdminPanel() {
-  const { isEditSelected, isAddSelected } = useContext(OrderContext);
+  const { currentTabSelected } = useContext(OrderContext);
 
   return (
     <AdminPanelStyled>
-      {isAddSelected && "Ajouter un produit"}
-      {isEditSelected && "Modifier un produit"}
+      {currentTabSelected === "add" && "Ajouter un produit"}
+      {currentTabSelected === "edit" && "Modifier un produit"}
     </AdminPanelStyled>
   );
 }
