@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../theme";
 import Main from "./Main/Main";
@@ -8,10 +7,20 @@ import { useState } from "react";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isEditSelected, setIsEditSelected] = useState(false);
+
+  const [isAddSelected, setIsAddSelected] = useState(true);
 
   const orderContextValue = {
     isModeAdmin,
     setIsModeAdmin,
+    isCollapsed,
+    setIsCollapsed,
+    isEditSelected,
+    setIsEditSelected,
+    isAddSelected,
+    setIsAddSelected,
   };
   return (
     <OrderContext.Provider value={orderContextValue}>

@@ -3,17 +3,53 @@ import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { theme } from "../../../../../theme";
 import { AiOutlinePlus } from "react-icons/ai";
+import { MdModeEditOutline } from "react-icons/md";
+import { useContext } from "react";
+import OrderContext from "../../../../../Context/OrderContext";
 
-export default function AdminTabs({ isCollapsed, setIsCollapsed }) {
+export default function AdminTabs() {
+  const {
+    isCollapsed,
+    setIsCollapsed,
+    isEditSelected,
+    setIsEditSelected,
+    isAddSelected,
+    setIsAddSelected,
+  } = useContext(OrderContext);
+
+  const selectAddTab = () => {
+    setIsCollapsed(false);
+    setIsAddSelected(true);
+    setIsEditSelected(false);
+  };
+
+  const selectEditTab = () => {
+    setIsCollapsed(false);
+    setIsAddSelected(false);
+    setIsEditSelected(true);
+  };
+
   return (
     <AdminTabsStyled>
       <Tab
         icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
         label=""
-        className={isCollapsed ? "is-active" : ""}
         onClick={() => setIsCollapsed((prev) => !prev)}
+        className={isCollapsed ? "is-active" : ""}
       />
-      <Tab icon={<AiOutlinePlus />} label="Ajouter un produit" />
+      <Tab
+        label="Ajouter un produit"
+        icon={<AiOutlinePlus />}
+        onClick={selectAddTab}
+        className={isAddSelected ? "is-active" : ""}
+      />
+
+      <Tab
+        label="Modifier un produit"
+        icon={<MdModeEditOutline />}
+        onClick={selectEditTab}
+        className={isEditSelected ? "is-active" : ""}
+      />
     </AdminTabsStyled>
   );
 }
