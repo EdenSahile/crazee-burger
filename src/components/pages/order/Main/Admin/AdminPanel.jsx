@@ -2,14 +2,18 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import OrderContext from "../../../../../Context/OrderContext";
+import { getTabsConfig, getTabSelected } from "./getTabsConfig";
 
 export default function AdminPanel() {
   const { currentTabSelected } = useContext(OrderContext);
 
+  const tabs = getTabsConfig(currentTabSelected);
+
+  const tabSelected = getTabSelected(tabs, currentTabSelected);
+
   return (
     <AdminPanelStyled>
-      {currentTabSelected === "add" && "Ajouter un produit"}
-      {currentTabSelected === "edit" && "Modifier un produit"}
+      {currentTabSelected === tabSelected.index && tabSelected.label}
     </AdminPanelStyled>
   );
 }

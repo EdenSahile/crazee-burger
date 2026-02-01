@@ -36,7 +36,7 @@ export default function AdminTabs() {
             icon={tab.icon}
             label={tab.label}
             onclick={() => selectTab(tab.index)}
-            className={tab.className}
+            className={currentTabSelected === tab.index ? "is-active" : ""}
           />
         );
       })}
