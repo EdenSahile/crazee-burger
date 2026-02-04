@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import Tab from "../../../../reusable-ui/Tab";
 import OrderContext from "../../../../../Context/OrderContext";
-
-// import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { theme } from "../../../../../theme";
 
 import { useContext } from "react";
@@ -30,15 +29,19 @@ export default function AdminTabs() {
 
   return (
     <AdminTabsStyled>
+      <Tab
+        icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
+        label=""
+        onclick={() => setIsCollapsed((prev) => !prev)}
+      />
       {tabs.map((tab) => {
         return (
           <Tab
             key={tab.index}
             icon={tab.icon}
             label={tab.label}
-            onclick={tab.onClick}
-            className={tab.className}
-            // className={currentTabSelected === tab.index ? "is-active" : ""}
+            onclick={() => selectTab(tab.index)}
+            className={currentTabSelected === tab.index ? "is-active" : ""}
           />
         );
       })}
