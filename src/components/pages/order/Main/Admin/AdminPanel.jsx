@@ -12,9 +12,7 @@ export default function AdminPanel() {
   const tabSelected = getTabSelected(tabs, currentTabSelected);
 
   return (
-    <AdminPanelStyled>
-      {currentTabSelected === tabSelected.index && tabSelected.label}
-    </AdminPanelStyled>
+    <AdminPanelStyled>{tabSelected && tabSelected.label}</AdminPanelStyled>
   );
 }
 

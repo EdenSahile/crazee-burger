@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Menu from "./Menu";
 import Admin from "./Admin/Admin";
 import OrderContext from "../../../../Context/OrderContext";
+import { theme } from "../../../../theme";
 
 export default function Main() {
   const { isModeAdmin } = useContext(OrderContext);
@@ -21,7 +22,7 @@ export default function Main() {
 const MainStyled = styled.main`
   background-color: #f5f5f7;
   height: calc(95vh-10vh);
-  box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: ${theme.shadows.strong};
   border-radius: 0px 0px 15px 15px;
   flex: 1;
   overflow-y: scroll;
