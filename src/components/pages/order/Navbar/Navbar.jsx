@@ -4,11 +4,11 @@ import { theme } from "../../../../theme";
 import NavbarRightSide from "./NavbarRightSide";
 import { refreshPage } from "../../../../utils/window";
 
-export default function Navbar({ username }) {
+export default function Navbar() {
   return (
     <NavbarStyled>
       <Logo onClick={refreshPage} className={"logo-order-page"} />
-      <NavbarRightSide username={username} />
+      <NavbarRightSide />
     </NavbarStyled>
   );
 }
@@ -23,7 +23,7 @@ const NavbarStyled = styled.nav`
   height: 10vh;
   border-radius: ${theme.borderRadius.extraRound}px
     ${theme.borderRadius.extraRound} 0 0;
-    border-bottom: 1px solid ${theme.colors.greyLight};
+  border-bottom: 1px solid ${theme.colors.greyLight};
 
   h1 {
     font-size: 16px;

@@ -1,7 +1,6 @@
-import styled from "styled-components"
-import { theme } from "../../theme/index"
-import PrimaryButton from "./PrimaryButton"
-
+import styled from "styled-components";
+import { theme } from "../../theme/index";
+import PrimaryButton from "./PrimaryButton";
 
 export default function Card({ title, imageSource, leftDescription }) {
   return (
@@ -19,7 +18,7 @@ export default function Card({ title, imageSource, leftDescription }) {
         </div>
       </div>
     </CardStyled>
-  )
+  );
 }
 
 const CardStyled = styled.div`
@@ -30,7 +29,7 @@ const CardStyled = styled.div`
   grid-template-rows: 65% 1fr;
   padding: 20px;
   padding-bottom: 10px;
-  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+  box-shadow: ${theme.shadows.medium};
   border-radius: ${theme.borderRadius.extraRound};
 
   .image {
@@ -80,7 +79,6 @@ const CardStyled = styled.div`
         overflow: hidden;
         text-overflow: ellipsis;
         color: ${theme.colors.primary};
-        
       }
 
       .right-description {
@@ -93,15 +91,13 @@ const CardStyled = styled.div`
           font-size: ${theme.fonts.size.XS};
           cursor: pointer;
           padding: 10px 24px;
-           width:95px;
+          width: 95px;
           height: 38px;
-          border-radius:${theme.borderRadius.round};
-       
-          border:1px solid #FF9F1B;
+          border-radius: ${theme.borderRadius.round};
 
+          border: 1px solid #ff9f1b;
         }
       }
     }
   }
-`
-
+`;

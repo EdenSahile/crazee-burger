@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "../../theme";
+import OrderContext from "../../Context/OrderContext";
 
 export default function ToggleButton({
-  isChecked,
   onToggle,
   labelIfChecked = "Fermer",
   labelIfUnchecked = "Ouvrir",
 }) {
+  const { isModeAdmin } = useContext(OrderContext);
+
   return (
     <ToggleButtonStyled>
       <input
         type="checkbox"
         className="toggle"
         id="rounded"
-        checked={isChecked}
+        checked={isModeAdmin}
         onChange={onToggle}
       />
       <label

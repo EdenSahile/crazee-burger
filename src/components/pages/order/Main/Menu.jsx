@@ -2,23 +2,23 @@ import styled from "styled-components";
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../theme";
 import Card from "../../../reusable-ui/Card";
-import {formatPrice} from "../../../../utils/maths"
+import { formatPrice } from "../../../../utils/maths";
 import { useState } from "react";
-
 
 export default function Menu() {
   const [menu, setmenu] = useState(fakeMenu2);
 
   return (
     <MenuStyled className="menu">
-      {menu.map(({id,title,imageSource,price}) => {
+      {menu.map(({ id, title, imageSource, price }) => {
         return (
           <Card
-          key={id}
-          title={title} 
-          imageSource={imageSource}
-          leftDescription={formatPrice(price)}/>
-        )
+            key={id}
+            title={title}
+            imageSource={imageSource}
+            leftDescription={formatPrice(price)}
+          />
+        );
       })}
     </MenuStyled>
   );
@@ -26,11 +26,12 @@ export default function Menu() {
 
 const MenuStyled = styled.div`
   background-color: ${theme.colors.background_white};
-  box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: ${theme.shadows.strong};
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 50px 50px 150px;
   grid-row-gap: 60px;
   justify-items: center;
-
-
+  overflow-y: scroll;
 `;
