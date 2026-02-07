@@ -9,7 +9,7 @@ import { IoChevronForward } from "react-icons/io5";
 export default function LoginForm({ inputValue, setInputValue }) {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleAdd = (e) => {
     console.log(inputValue);
     e.preventDefault();
     navigate(`/order/${inputValue}`);
@@ -18,7 +18,7 @@ export default function LoginForm({ inputValue, setInputValue }) {
   const handleChange = (e) => setInputValue(e.target.value);
 
   return (
-    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
+    <LoginFormStyled action="submit" onSubmit={handleAdd}>
       <div>
         <h1> Bienvenue chez nous!</h1>
         <hr />

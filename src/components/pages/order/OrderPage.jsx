@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { theme } from "../../../theme";
 import Main from "./Main/Main";
 import Navbar from "./Navbar/Navbar";
+import { fakeMenu } from "../../../fakeData/fakeMenu";
+
 import OrderContext from "../../../Context/OrderContext";
 import { useState } from "react";
 
@@ -9,6 +11,17 @@ export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [currentTabSelected, setCurrentTabSelected] = useState("add");
+  const [menu, setMenu] = useState(fakeMenu.MEDIUM);
+
+  //comportement
+  const handleAdd = (newProduct) => {
+    //copie state
+    const menuCopy = [...menu];
+    //manipulation de la copie du tableau
+    const menuUpdate = [newProduct, ...menuCopy];
+    //Update du  state
+    setMenu(menuUpdate);
+  };
 
   const orderContextValue = {
     isModeAdmin,
@@ -17,7 +30,10 @@ export default function OrderPage() {
     setIsCollapsed,
     currentTabSelected,
     setCurrentTabSelected,
+    menu,
+    handleAdd,
   };
+
   return (
     <OrderContext.Provider value={orderContextValue}>
       <OrderPageStyled>

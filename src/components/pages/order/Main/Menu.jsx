@@ -1,13 +1,15 @@
 import styled from "styled-components";
-import { fakeMenu } from "../../../../fakeData/fakeMenu";
+// import { fakeMenu } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../theme";
 import Card from "../../../reusable-ui/Card";
 import { formatPrice } from "../../../../utils/maths";
-import { useState } from "react";
+import { useContext } from "react";
+import OrderContext from "../../../../Context/OrderContext";
 
 export default function Menu() {
-  const [menu, setmenu] = useState(fakeMenu.MEDIUM);
+  const { menu } = useContext(OrderContext);
 
+  // affichage
   return (
     <MenuStyled className="menu">
       {menu.map(({ id, title, imageSource, price }) => {
