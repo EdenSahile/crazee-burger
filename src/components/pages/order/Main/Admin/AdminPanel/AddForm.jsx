@@ -8,9 +8,9 @@ import OrderContext from "../../../../../../Context/OrderContext";
 
 const EMPTY_PRODUCT = {
   id: "",
-  title: "Nouveau produit",
+  title: "",
   imageSource: "",
-  price: 14,
+  price: 0,
 };
 export default function AddForm() {
   const { handleAdd } = useContext(OrderContext);
@@ -29,6 +29,8 @@ export default function AddForm() {
     };
 
     handleAdd(newProductToAdd);
+
+    setNewProduct(EMPTY_PRODUCT);
   };
 
   const handleChange = (e) => {
@@ -52,14 +54,14 @@ export default function AddForm() {
         <input
           type="text"
           name="title"
-          placeholder="Nom"
+          placeholder="Nom du produit (ex: Super Burger)"
           value={newProduct.title}
           onChange={handleChange}
         />
         <input
           type="text"
           name="imageSource"
-          placeholder="Image URL"
+          placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)"
           value={newProduct.imageSource}
           onChange={handleChange}
         />
