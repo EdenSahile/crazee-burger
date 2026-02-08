@@ -22,7 +22,7 @@ export default function AddForm() {
 
     const newProductToAdd = {
       ...newProduct,
-      id: new Date().getTime(),
+      id: crypto.randomUUID(),
       // title: newProduct.title,,
       // imageSource: newProduct.imageSource,
       // price: newProduct.price,
@@ -32,9 +32,11 @@ export default function AddForm() {
   };
 
   const handleChange = (e) => {
-    const newValue = e.target.value;
-    const name = e.target.name;
-    setNewProduct({ ...newProduct, [name]: newValue });
+    setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
+
+    // autre façon de faire la même chose que la ligne du dessus
+    // const { name, value } = e.target;
+    //   setNewProduct({ ...newProduct, [name]:value });
   };
 
   return (
