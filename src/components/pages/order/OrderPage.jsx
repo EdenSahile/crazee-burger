@@ -19,7 +19,7 @@ export default function OrderPage() {
     const menuCopy = [...menu];
     //manipulation de la copie du tableau
     const menuUpdate = [newProduct, ...menuCopy];
-    //Update du  state
+    //Update du state
     setMenu(menuUpdate);
   };
 
