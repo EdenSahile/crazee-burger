@@ -33,6 +33,9 @@ export default function OrderPage() {
     setMenu(menuFiltered);
   };
 
+  const resetMenu = () => {
+    setMenu(fakeMenu.MEDIUM);
+  };
   const orderContextValue = {
     isModeAdmin,
     setIsModeAdmin,
@@ -41,7 +44,7 @@ export default function OrderPage() {
     currentTabSelected,
     setCurrentTabSelected,
     menu,
-    setMenu,
+    resetMenu,
     handleAdd,
     handleDelete,
   };
