@@ -9,7 +9,7 @@ import OrderContext from "../../../../Context/OrderContext";
 const IMAGE_BY_DEFAULT = "/src/assets/coming-soon.png";
 
 export default function Menu() {
-  const { menu } = useContext(OrderContext);
+  const { menu, isModeAdmin } = useContext(OrderContext);
 
   // affichage
   return (
@@ -21,6 +21,7 @@ export default function Menu() {
             title={title}
             imageSource={imageSource ? imageSource : IMAGE_BY_DEFAULT}
             leftDescription={formatPrice(price)}
+            hasDeleteButton={isModeAdmin}
           />
         );
       })}
