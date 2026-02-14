@@ -23,6 +23,16 @@ export default function OrderPage() {
     setMenu(menuUpdate);
   };
 
+  const handleDelete = (id) => {
+    const menuCopy = [...menu];
+
+    const menuFiltered = menuCopy.filter((m) => {
+      return m.id !== id;
+    });
+
+    setMenu(menuFiltered);
+  };
+
   const orderContextValue = {
     isModeAdmin,
     setIsModeAdmin,
@@ -31,7 +41,9 @@ export default function OrderPage() {
     currentTabSelected,
     setCurrentTabSelected,
     menu,
+    setMenu,
     handleAdd,
+    handleDelete,
   };
 
   return (
