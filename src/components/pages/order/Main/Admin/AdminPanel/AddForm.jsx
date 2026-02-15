@@ -6,6 +6,7 @@ import styled from "styled-components";
 // import TextInput from "../../../../../reusable-ui/TextInput";
 import OrderContext from "../../../../../../Context/OrderContext";
 import { FiCheck } from "react-icons/fi";
+import { theme } from "../../../../../../theme/index";
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -58,7 +59,7 @@ export default function AddForm() {
         {newProduct.imageSource ? (
           <img src={newProduct.imageSource} alt={newProduct.title} />
         ) : (
-          <div>Aucune image</div>
+          <div className="empty-image">Aucune image</div>
         )}
       </div>
       <div className="input-fields">
@@ -103,6 +104,8 @@ const AddFormstyled = styled.form`
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 8px;
 
   height: 100%;
   width: 70%;
@@ -118,6 +121,18 @@ const AddFormstyled = styled.form`
       height: 100%;
       object-fit: contain;
       object-position: center;
+    }
+
+    .empty-image {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid ${theme.colors.greyLight};
+      line-height: 1.5;
+      color: ${theme.colors.greySemiDark};
+      border-radius: ${theme.borderRadius.round};
     }
   }
 
