@@ -2,10 +2,16 @@ import React from "react";
 import { theme } from "../../theme";
 import styled from "styled-components";
 
-export default function TextInput({ value, onChange, icon, ...extraProps }) {
+export default function TextInput({
+  value,
+  onChange,
+  icon,
+  className,
+  ...extraProps
+}) {
   return (
-    <InputLoginStyled>
-      {icon && icon}
+    <InputLoginStyled className={className}>
+      <div className="icon">{icon && icon}</div>
       <input type="text" value={value} onChange={onChange} {...extraProps} />
     </InputLoginStyled>
   );
@@ -17,13 +23,14 @@ const InputLoginStyled = styled.div`
   display: flex;
   align-items: center;
   padding: 18px 24px;
-  margin: 18px 0;
 
   .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: ${theme.fonts.size.SM};
-    margin-right: ${theme.gridUnit};
+    margin: 0 8px 0 10px;
     color: ${theme.colors.greySemiDark};
-    /* padding-right: 8px; */
   }
 
   input {

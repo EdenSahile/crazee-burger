@@ -1,20 +1,19 @@
 import { theme } from "../../theme";
 import styled from "styled-components";
 
-export default function PrimaryButton({ label, icon,className }) {
+export default function PrimaryButton({ label, icon, className }) {
   return (
     <>
       <PrimaryButtonStyled className={className}>
         <span>{label}</span>
-        {icon && icon}
+        <div className="icon">{icon && icon}</div>
       </PrimaryButtonStyled>
     </>
   );
 }
 
 const PrimaryButtonStyled = styled.button`
-
-width: 100%;
+  width: 100%;
   border: 1px solid red;
   display: inline-flex;
   justify-content: center;
@@ -63,6 +62,11 @@ width: 100%;
       color: ${theme.colors.primary};
     }
   }
-
- 
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: ${theme.fonts.size.SM}; */
+    margin-left: 10px;
+  }
 `;
