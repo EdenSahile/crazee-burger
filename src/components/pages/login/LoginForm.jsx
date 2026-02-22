@@ -3,7 +3,7 @@ import { theme } from "../../../theme/index";
 import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
 import TextInput from "../../reusable-ui/TextInput";
-import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import Button from "../../reusable-ui/Button";
 import { IoChevronForward } from "react-icons/io5";
 
 export default function LoginForm({ inputValue, setInputValue }) {
@@ -33,9 +33,10 @@ export default function LoginForm({ inputValue, setInputValue }) {
         icon={<BsPersonCircle />}
         className="input-login"
       />
-      <PrimaryButton
+      <Button
         label={"Accéder à mon espace"}
         icon={<IoChevronForward />}
+        version="normal"
       />
     </LoginFormStyled>
   );
