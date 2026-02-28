@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Logo from "../../reusable-ui/Logo";
 
 export default function LoginPage() {
-  const [inputValue, setInputValue] = useState("Eden");
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <LoginPageStyled>

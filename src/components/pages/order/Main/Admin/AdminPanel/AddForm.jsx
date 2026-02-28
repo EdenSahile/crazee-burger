@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
-import { BsFillCameraFill } from "react-icons/bs";
-import { FaHamburger } from "react-icons/fa";
-import { MdOutlineEuro } from "react-icons/md";
+
 import styled from "styled-components";
 import TextInput from "../../../../../reusable-ui/TextInput";
 import OrderContext from "../../../../../../Context/OrderContext";
@@ -9,6 +7,7 @@ import { theme } from "../../../../../../theme/index";
 import Button from "../../../../../reusable-ui/Button";
 import ImagePreview from "./ImagePreview";
 import SubmitMessage from "./SubmitMessage";
+import { GetInputTextsConfig } from "./inputTextConfig";
 
 export const EMPTY_PRODUCT = {
   id: "",
@@ -53,38 +52,55 @@ export default function AddForm() {
     //   setNewProduct({ ...newProduct, [name]:value });
   };
 
+  const inputTexts = GetInputTextsConfig(newProduct);
+  // const inputTexts = [
+  //   {
+  //     id: "1",
+  //     name: "title",
+  //     placeholder: "Nom du produit (ex: Super Burger)",
+  //     value: newProduct.title,
+  //     type: "text",
+  //     icon: <FaHamburger />,
+  //     version: "minimalist",
+  //   },
+  //   {
+  //     id: "2",
+  //     name: "imageSource",
+  //     placeholder:
+  //       "Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)",
+  //     value: newProduct.imageSource,
+  //     type: "text",
+  //     icon: <BsFillCameraFill />,
+  //     version: "minimalist",
+  //   },
+  //   {
+  //     id: "3",
+  //     name: "price",
+  //     placeholder: "Price",
+  //     value: newProduct.price ? newProduct.price : "",
+  //     type: "text",
+  //     icon: <MdOutlineEuro />,
+  //     version: "minimalist",
+  //   },
+  // ];
+
   return (
     <AddFormstyled className="form" onSubmit={handleSubmit}>
       <ImagePreview />
       <div className="input-fields">
-        <TextInput
-          type="text"
-          name="title"
-          placeholder="Nom du produit (ex: Super Burger)"
-          value={newProduct.title}
-          onChange={handleChange}
-          icon={<FaHamburger />}
-          version="minimalist"
-        />
-        <TextInput
-          type="text"
-          name="imageSource"
-          placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)"
-          value={newProduct.imageSource}
-          onChange={handleChange}
-          icon={<BsFillCameraFill />}
-          version="minimalist"
-        />
-
-        <TextInput
-          type="text"
-          name="price"
-          placeholder="Prix"
-          value={newProduct.price ? newProduct.price : ""}
-          onChange={handleChange}
-          icon={<MdOutlineEuro />}
-          version="minimalist"
-        />
+        {inputTexts.map((input) => (
+          <TextInput
+            key={input.id}
+            name={input.name}
+            value={input.value}
+            placeholder={input.placeholder}
+            icon={input.icon}
+            // au lieu d'écrire tout le code du dessus, on peut faire un spread operator pour récupérer toutes les autres propriétés de l'objet input
+            // {...input} va récupérer toutes les propriétés de l'objet input et les passer en props au composant TextInput
+            onChange={handleChange}
+            version="minimalist"
+          />
+        ))}
       </div>
       <div className="submit">
         <Button
