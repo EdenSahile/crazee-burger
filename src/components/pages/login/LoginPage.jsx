@@ -16,17 +16,16 @@ export default function LoginPage() {
 }
 
 const LoginPageStyled = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
 
-
   &::before {
     content: "";
-    background: url("images/burger-background.jpg"),
+    background:
+      url("images/burger-background.jpg"),
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-blend-mode: darken;
     background-size: cover;
@@ -37,7 +36,7 @@ const LoginPageStyled = styled.div`
     bottom: 0;
     z-index: -1;
   }
-  .logo-login-page{
+  .logo-login-page {
     transform: scale(2.5);
   }
 `;

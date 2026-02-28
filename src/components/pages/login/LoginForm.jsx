@@ -3,13 +3,13 @@ import { theme } from "../../../theme/index";
 import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
 import TextInput from "../../reusable-ui/TextInput";
-import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import Button from "../../reusable-ui/Button";
 import { IoChevronForward } from "react-icons/io5";
 
 export default function LoginForm({ inputValue, setInputValue }) {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleAdd = (e) => {
     console.log(inputValue);
     e.preventDefault();
     navigate(`/order/${inputValue}`);
@@ -18,7 +18,7 @@ export default function LoginForm({ inputValue, setInputValue }) {
   const handleChange = (e) => setInputValue(e.target.value);
 
   return (
-    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
+    <LoginFormStyled action="submit" onSubmit={handleAdd}>
       <div>
         <h1> Bienvenue chez nous!</h1>
         <hr />
@@ -30,11 +30,13 @@ export default function LoginForm({ inputValue, setInputValue }) {
         onChange={handleChange}
         placeholder="Entrez votre prénom..."
         required
-        icon={<BsPersonCircle className="icon" />}
+        icon={<BsPersonCircle />}
+        className="input-login"
       />
-      <PrimaryButton
+      <Button
         label={"Accéder à mon espace"}
-        icon={<IoChevronForward className="icon" />}
+        icon={<IoChevronForward />}
+        version="normal"
       />
     </LoginFormStyled>
   );
@@ -63,11 +65,7 @@ const LoginFormStyled = styled.form`
     margin: 20px 10px 10px;
   }
 
-  .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: ${theme.fonts.size.SM};
-    margin-left: 10px;
+  .input-login {
+    margin: 18px 0;
   }
 `;
