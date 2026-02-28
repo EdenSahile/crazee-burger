@@ -99,7 +99,6 @@ export default function AddForm() {
           type="submit"
           className="submit-button"
           version="success"
-          s
         />
 
         {/* <button type="submit" className="submit-button">
