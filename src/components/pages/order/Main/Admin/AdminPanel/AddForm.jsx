@@ -5,10 +5,10 @@ import { MdOutlineEuro } from "react-icons/md";
 import styled from "styled-components";
 import TextInput from "../../../../../reusable-ui/TextInput";
 import OrderContext from "../../../../../../Context/OrderContext";
-import { FiCheck } from "react-icons/fi";
 import { theme } from "../../../../../../theme/index";
 import Button from "../../../../../reusable-ui/Button";
 import ImagePreview from "./ImagePreview";
+import SubmitMessage from "./SubmitMessage";
 
 export const EMPTY_PRODUCT = {
   id: "",
@@ -19,8 +19,6 @@ export const EMPTY_PRODUCT = {
 export default function AddForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { handleAdd, newProduct, setNewProduct } = useContext(OrderContext);
-
-  // const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -95,16 +93,7 @@ export default function AddForm() {
           className="submit-button"
           version="success"
         />
-
-        {/* <button type="submit" className="submit-button">
-          Submit button
-        </button> */}
-        {isSubmitted && (
-          <div className="submit-message">
-            <FiCheck className="icon" />
-            <span className="message">Ajouté avec succès</span>
-          </div>
-        )}
+        {isSubmitted && <SubmitMessage />}
       </div>
     </AddFormstyled>
   );
@@ -134,29 +123,6 @@ const AddFormstyled = styled.form`
 
     .submit-button {
       width: 50%;
-    }
-    .submit-message {
-      /* border: 1px solid red; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: 5px;
-
-      .icon {
-        color: ${theme.colors.success};
-        margin-left: 10px;
-        width: 1em;
-        height: 1em;
-        border: 1px solid ${theme.colors.success};
-        border-radius: 50%;
-        vertical-align: middle;
-      }
-
-      .message {
-        margin-left: 5px;
-        font-size: ${theme.fonts.size.SM};
-        color: ${theme.colors.success};
-      }
     }
   }
 `;
