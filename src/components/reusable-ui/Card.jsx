@@ -11,7 +11,7 @@ export default function Card({
   onDelete,
 }) {
   return (
-    <CardStyled className="produit">
+    <CardStyled>
       {hasDeleteButton && (
         <button
           className="delete-button"
