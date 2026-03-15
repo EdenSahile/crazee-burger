@@ -8,13 +8,8 @@ import Button from "../../../../../reusable-ui/Button";
 import ImagePreview from "./ImagePreview";
 import SubmitMessage from "./SubmitMessage";
 import { GetInputTextsConfig } from "./inputTextConfig";
+import { EMPTY_PRODUCT } from "../../../../../../enums/product";
 
-export const EMPTY_PRODUCT = {
-  id: "",
-  title: "",
-  imageSource: "",
-  price: 0,
-};
 export default function AddForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { handleAdd, newProduct, setNewProduct } = useContext(OrderContext);
@@ -29,7 +24,6 @@ export default function AddForm() {
       // imageSource: newProduct.imageSource,
       // price: newProduct.price,
     };
-
     handleAdd(newProductToAdd);
 
     setNewProduct(EMPTY_PRODUCT);

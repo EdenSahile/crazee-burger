@@ -6,7 +6,7 @@ import { fakeMenu } from "../../../fakeData/fakeMenu";
 
 import OrderContext from "../../../Context/OrderContext";
 import { useState } from "react";
-import { EMPTY_PRODUCT } from "./Main/Admin/AdminPanel/AddForm";
+import { EMPTY_PRODUCT } from "../../../enums/product";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
@@ -14,6 +14,7 @@ export default function OrderPage() {
   const [currentTabSelected, setCurrentTabSelected] = useState("add");
   const [menu, setMenu] = useState(fakeMenu.MEDIUM);
   const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT);
+  const [productSelected, setProductSelected] = useState(EMPTY_PRODUCT);
 
   //comportement
   const handleAdd = (newProduct) => {
@@ -51,6 +52,8 @@ export default function OrderPage() {
     handleDelete,
     newProduct,
     setNewProduct,
+    productSelected,
+    setProductSelected,
   };
 
   return (

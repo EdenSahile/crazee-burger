@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../theme/index";
 import Button from "./Button";
 import { TiDelete } from "react-icons/ti";
+import React from "react";
 
 export default function Card({
   title,
@@ -9,9 +10,10 @@ export default function Card({
   leftDescription,
   hasDeleteButton,
   onDelete,
+  onClick,
 }) {
   return (
-    <CardStyled>
+    <CardStyled className="produit" onClick={onClick}>
       {hasDeleteButton && (
         <button
           className="delete-button"
