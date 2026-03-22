@@ -50,7 +50,10 @@ export default function AddForm() {
 
   return (
     <AddFormstyled className="form" onSubmit={handleSubmit}>
-      <ImagePreview />
+      <ImagePreview
+        imageSource={newProduct.imageSource}
+        title={newProduct.title}
+      />
       <div className="input-fields">
         {inputTexts.map((input) => (
           <TextInput
