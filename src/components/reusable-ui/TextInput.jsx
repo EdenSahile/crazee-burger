@@ -8,12 +8,19 @@ export default function TextInput({
   icon,
   className,
   version = "normal",
+  inputRef,
   ...extraProps
 }) {
   return (
     <TextInputStyled className={className} version={version}>
       <div className="icon">{icon && icon}</div>
-      <input type="text" value={value} onChange={onChange} {...extraProps} />
+      <input
+        type="text"
+        ref={inputRef}
+        value={value}
+        onChange={onChange}
+        {...extraProps}
+      />
     </TextInputStyled>
   );
 }

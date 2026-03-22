@@ -7,6 +7,7 @@ import { fakeMenu } from "../../../fakeData/fakeMenu";
 import OrderContext from "../../../Context/OrderContext";
 import { useState } from "react";
 import { EMPTY_PRODUCT } from "../../../enums/product";
+import { deepClone } from "../../../utils/array";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
@@ -27,8 +28,7 @@ export default function OrderPage() {
   };
 
   const handleDelete = (id) => {
-    const menuCopy = JSON.parse(JSON.stringify(menu));
-
+    const menuCopy = deepClone();
     const menuFiltered = menuCopy.filter((m) => {
       return m.id !== id;
     });
