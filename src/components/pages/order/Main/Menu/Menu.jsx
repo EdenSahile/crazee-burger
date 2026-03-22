@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import Card from "../../../../reusable-ui/Card";
 import { formatPrice } from "../../../../../utils/maths";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import OrderContext from "../../../../../Context/OrderContext";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
@@ -20,10 +20,10 @@ export default function Menu() {
   }
 
   const handleClick = (idProductClicked) => {
-    const productSelected = menu.find(
+    const productClickedOn = menu.find(
       (product) => product.id === idProductClicked,
     );
-    setProductSelected(productSelected);
+    setProductSelected(productClickedOn);
   };
 
   // affichage
