@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../theme/index";
 import Button from "./Button";
 import { TiDelete } from "react-icons/ti";
@@ -11,27 +11,30 @@ export default function Card({
   hasDeleteButton,
   onDelete,
   onClick,
+  isHoverable,
 }) {
   return (
-    <CardStyled className="produit" onClick={onClick}>
-      {hasDeleteButton && (
-        <button
-          className="delete-button"
-          aria-label="delete-button"
-          onClick={onDelete}
-        >
-          <TiDelete className="icon" />
-        </button>
-      )}
-      <div className="image">
-        <img src={imageSource} alt={title} />
-      </div>
-      <div className="text-info">
-        <div className="title">{title}</div>
-        <div className="description">
-          <div className="left-description">{leftDescription}</div>
-          <div className="right-description">
-            <Button className="primary-button" label={"Ajouter"} />
+    <CardStyled className="produit" onClick={onClick} isHoverable={isHoverable}>
+      <div className="card">
+        {hasDeleteButton && (
+          <button
+            className="delete-button"
+            aria-label="delete-button"
+            onClick={onDelete}
+          >
+            <TiDelete className="icon" />
+          </button>
+        )}
+        <div className="image">
+          <img src={imageSource} alt={title} />
+        </div>
+        <div className="text-info">
+          <div className="title">{title}</div>
+          <div className="description">
+            <div className="left-description">{leftDescription}</div>
+            <div className="right-description">
+              <Button className="primary-button" label={"Ajouter"} />
+            </div>
           </div>
         </div>
       </div>
@@ -40,16 +43,21 @@ export default function Card({
 }
 
 const CardStyled = styled.div`
-  background: ${theme.colors.white};
-  width: 240px;
-  height: 330px;
-  display: grid;
-  grid-template-rows: 65% 1fr;
-  padding: 20px;
-  padding-bottom: 10px;
-  box-shadow: ${theme.shadows.medium};
+  ${({ isHoverable }) => isHoverable && hoverableStyle}
   border-radius: ${theme.borderRadius.extraRound};
-  position: relative;
+
+  .card {
+    background: ${theme.colors.white};
+    width: 240px;
+    height: 330px;
+    display: grid;
+    grid-template-rows: 65% 1fr;
+    padding: 20px;
+    padding-bottom: 10px;
+    box-shadow: ${theme.shadows.medium};
+    border-radius: ${theme.borderRadius.extraRound};
+    position: relative;
+  }
 
   .delete-button {
     border: 1px solid red;
@@ -149,5 +157,14 @@ const CardStyled = styled.div`
         }
       }
     }
+  }
+`;
+
+const hoverableStyle = css`
+  &:hover {
+    transform: scale(1.05);
+    transition: ease-out 0.4s;
+    box-shadow: ${theme.shadows.orangeHighlight};
+    cursor: pointer;
   }
 `;
