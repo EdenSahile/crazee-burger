@@ -37,9 +37,13 @@ export default function Card({
         <div className="text-info">
           <div className="title">{title}</div>
           <div className="description">
-            <div className="left-description">{leftDescription}</div>
+            <div className="lseft-description">{leftDescription}</div>
             <div className="right-description">
-              <Button className="primary-button" label={"Ajouter"} />
+              <Button
+                className="primary-button"
+                label={"Ajouter"}
+                onClick={(e) => e.stopPropagation()}
+              />
             </div>
           </div>
         </div>
