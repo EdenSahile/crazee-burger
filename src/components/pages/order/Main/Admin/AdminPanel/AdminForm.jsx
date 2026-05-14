@@ -8,7 +8,7 @@ export default function AdminForm({
   onChange,
   product,
   ref,
-  QUELQUECHOSE,
+  children,
 }) {
   const inputTexts = GetInputTextsConfig(product);
 
@@ -31,7 +31,7 @@ export default function AdminForm({
           />
         ))}
       </div>
-      <div className="submit">{QUELQUECHOSE}</div>
+      <div className="submit">{children}</div>
     </AdminFormStyled>
   );
 }
@@ -57,10 +57,5 @@ const AdminFormStyled = styled.form`
     align-items: center;
     position: relative;
     top: 3px;
-
-    .submit-button {
-      /* width: 50%; */
-      height: 100%;
-    }
   }
 `;

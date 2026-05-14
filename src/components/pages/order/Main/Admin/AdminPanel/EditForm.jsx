@@ -30,7 +30,8 @@ export default function EditForm() {
       product={productSelected}
       onChange={handleChange}
       ref={titleEditRef}
-      QUELQUECHOSE={<EditInfoMessage />}
-    />
+    >
+      <EditInfoMessage />
+    </AdminForm>
   );
 }
