@@ -8,7 +8,7 @@ export default function TextInput({
   icon,
   className,
   version = "normal",
-  inputRef,
+  ref,
   ...extraProps
 }) {
   return (
@@ -16,7 +16,7 @@ export default function TextInput({
       <div className="icon">{icon && icon}</div>
       <input
         type="text"
-        ref={inputRef}
+        ref={ref}
         value={value}
         onChange={onChange}
         {...extraProps}

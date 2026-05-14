@@ -7,7 +7,7 @@ import TextInput from "../../../../../reusable-ui/TextInput";
 
 export default function EditForm() {
   //state
-  const { productSelected, handleEdit, setProductSelected } =
+  const { productSelected, handleEdit, setProductSelected, titleEditRef } =
     useContext(OrderContext);
 
   const inputTexts = GetInputTextsConfig(productSelected);
@@ -41,6 +41,7 @@ export default function EditForm() {
             // {...input} va récupérer toutes les propriétés de l'objet input et les passer en props au composant TextInput
             onChange={handleChange}
             version="minimalist"
+            ref={input.name === "title" ? titleEditRef : null} // on veut seulement le ref du champ title, pas des autres champs
           />
         ))}
       </div>

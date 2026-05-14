@@ -21,6 +21,7 @@ export default function Menu() {
     productSelected,
     setIsCollapsed,
     setCurrentTabSelected,
+    titleEditRef,
   } = useContext(OrderContext);
 
   if (menu.length === 0) {
@@ -28,15 +29,17 @@ export default function Menu() {
     return <EmptyMenuAdmin onReset={resetMenu} />;
   }
 
-  const handleClick = (idProductClicked) => {
+  const handleClick = async (idProductClicked) => {
     if (!isModeAdmin) return;
 
-    setIsCollapsed(false);
-    setCurrentTabSelected("edit");
+    await setIsCollapsed(false);
+    await setCurrentTabSelected("edit");
+
     const productClickedOn = menu.find(
       (product) => product.id === idProductClicked,
     );
-    setProductSelected(productClickedOn);
+    await setProductSelected(productClickedOn);
+    titleEditRef.current.focus();
   };
 
   const handleCardToDelete = (e, idProductToDelete) => {
