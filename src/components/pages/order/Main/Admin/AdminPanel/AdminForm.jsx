@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import TextInput from "../../../../../reusable-ui/TextInput";
-import Button from "../../../../../reusable-ui/Button";
 import ImagePreview from "./ImagePreview";
-import SubmitMessage from "./SubmitMessage";
 import { GetInputTextsConfig } from "./inputTextConfig";
-import { EMPTY_PRODUCT } from "../../../../../../enums/product";
 
 export default function AdminForm({
-  isSubmitted,
   onSubmit,
   onChange,
   product,
+  ref,
+  QUELQUECHOSE,
 }) {
   const inputTexts = GetInputTextsConfig(product);
 
@@ -29,18 +27,11 @@ export default function AdminForm({
             // {...input} va récupérer toutes les propriétés de l'objet input et les passer en props au composant TextInput
             onChange={onChange}
             version="minimalist"
+            ref={ref && input.name === "title" ? ref : null}
           />
         ))}
       </div>
-      <div className="submit">
-        <Button
-          label={"ajouter un nouveau produit au menu"}
-          type="submit"
-          className="submit-button"
-          version="success"
-        />
-        {isSubmitted && <SubmitMessage />}
-      </div>
+      <div className="submit">{QUELQUECHOSE}</div>
     </AdminFormStyled>
   );
 }
