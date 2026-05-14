@@ -31,7 +31,7 @@ export default function AdminForm({
           />
         ))}
       </div>
-      <div className="submit">{children}</div>
+      <div className="form-footer">{children}</div>
     </AdminFormStyled>
   );
 }
@@ -51,7 +51,7 @@ const AdminFormStyled = styled.form`
     grid-row-gap: 8px;
   }
 
-  .submit {
+  .form-footer {
     grid-area: 4/2/-1/-1;
     display: flex;
     align-items: center;
