@@ -4,7 +4,7 @@ import AddForm from "./AdminPanel/AddForm";
 import EditForm from "./AdminPanel/EditForm";
 import HintMessage from "./AdminPanel/HintMessage";
 
-export const getTabsConfig = () => [
+export const getTabsConfig = (hasAlreadyBeenClicked) => [
   {
     index: "add",
     icon: <AiOutlinePlus />,
@@ -14,7 +14,7 @@ export const getTabsConfig = () => [
   {
     index: "edit",
     icon: <MdModeEditOutline />,
-    content: <EditForm />,
+    content: hasAlreadyBeenClicked ? <EditForm /> : <HintMessage />,
 
     label: "Modifier un produit",
   },
