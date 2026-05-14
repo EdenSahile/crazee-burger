@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import OrderContext from "../../../../../../Context/OrderContext";
 import { EMPTY_PRODUCT } from "../../../../../../enums/product";
 import AdminForm from "./AdminForm";
-import Button from "../../../../../reusable-ui/Button";
+import SubmitButton from "./SubmitButton";
 export default function AddForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { handleAdd, newProduct, setNewProduct } = useContext(OrderContext);
@@ -46,15 +46,7 @@ export default function AddForm() {
       product={newProduct}
       isSubmitted={isSubmitted}
     >
-      <>
-        <Button
-          label={"ajouter un nouveau produit au menu"}
-          type="submit"
-          className="submit-button"
-          version="success"
-        />
-        {isSubmitted && <SubmitMessage />}
-      </>
+      <SubmitButton isSubmitted={isSubmitted} />
     </AdminForm>
   );
 }
