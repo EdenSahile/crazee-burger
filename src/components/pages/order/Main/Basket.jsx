@@ -14,7 +14,7 @@ export default function Basket() {
 const BasketStyled = styled.div`
   display: flex;
   flex-direction: column;
-
+  box-shadow: ${theme.shadows.basket};
   .head {
     background-color: ${theme.colors.background_dark};
     height: 70px;
