@@ -5,8 +5,9 @@ import Navbar from "./Navbar/Navbar";
 import { fakeMenu } from "../../../fakeData/fakeMenu";
 
 import OrderContext from "../../../Context/OrderContext";
-import { useState } from "react";
-import { EMPTY_PRODUCT } from "./Main/Admin/AdminPanel/AddForm";
+import { useRef, useState } from "react";
+import { EMPTY_PRODUCT } from "../../../enums/product";
+import { deepClone } from "../../../utils/array";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
@@ -14,11 +15,14 @@ export default function OrderPage() {
   const [currentTabSelected, setCurrentTabSelected] = useState("add");
   const [menu, setMenu] = useState(fakeMenu.MEDIUM);
   const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT);
+  const [productSelected, setProductSelected] = useState(EMPTY_PRODUCT);
+
+  const titleEditRef = useRef(null);
 
   //comportement
   const handleAdd = (newProduct) => {
     //copie state
-    const menuCopy = [...menu];
+    const menuCopy = deepClone(menu);
     //manipulation de la copie du tableau
     const menuUpdate = [newProduct, ...menuCopy];
     //Update du state
@@ -26,13 +30,29 @@ export default function OrderPage() {
   };
 
   const handleDelete = (id) => {
-    const menuCopy = [...menu];
-
+    const menuCopy = deepClone(menu);
     const menuFiltered = menuCopy.filter((m) => {
       return m.id !== id;
     });
 
     setMenu(menuFiltered);
+  };
+
+  const handleEdit = (productBeingEdited) => {
+    console.log("productBeingEdited : ", productBeingEdited);
+
+    //1 - copie state (Deep Clone)
+
+    const menuCopy = deepClone(menu);
+
+    //2 - manipulation
+    const indexOfProductToEdit = menu.findIndex(
+      (menuproduct) => menuproduct.id === productBeingEdited.id,
+    );
+    menuCopy[indexOfProductToEdit] = productBeingEdited;
+
+    //3 - update du state
+    setMenu(menuCopy);
   };
 
   const resetMenu = () => {
@@ -51,6 +71,10 @@ export default function OrderPage() {
     handleDelete,
     newProduct,
     setNewProduct,
+    productSelected,
+    setProductSelected,
+    handleEdit,
+    titleEditRef,
   };
 
   return (

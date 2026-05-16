@@ -1,20 +1,8 @@
 import React, { useContext, useState } from "react";
-
-import styled from "styled-components";
-import TextInput from "../../../../../reusable-ui/TextInput";
 import OrderContext from "../../../../../../Context/OrderContext";
-import { theme } from "../../../../../../theme/index";
-import Button from "../../../../../reusable-ui/Button";
-import ImagePreview from "./ImagePreview";
-import SubmitMessage from "./SubmitMessage";
-import { GetInputTextsConfig } from "./inputTextConfig";
-
-export const EMPTY_PRODUCT = {
-  id: "",
-  title: "",
-  imageSource: "",
-  price: 0,
-};
+import { EMPTY_PRODUCT } from "../../../../../../enums/product";
+import AdminForm from "./AdminForm";
+import SubmitButton from "./SubmitButton";
 export default function AddForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { handleAdd, newProduct, setNewProduct } = useContext(OrderContext);
@@ -29,7 +17,6 @@ export default function AddForm() {
       // imageSource: newProduct.imageSource,
       // price: newProduct.price,
     };
-
     handleAdd(newProductToAdd);
 
     setNewProduct(EMPTY_PRODUCT);
@@ -52,94 +39,14 @@ export default function AddForm() {
     //   setNewProduct({ ...newProduct, [name]:value });
   };
 
-  const inputTexts = GetInputTextsConfig(newProduct);
-  // const inputTexts = [
-  //   {
-  //     id: "1",
-  //     name: "title",
-  //     placeholder: "Nom du produit (ex: Super Burger)",
-  //     value: newProduct.title,
-  //     type: "text",
-  //     icon: <FaHamburger />,
-  //     version: "minimalist",
-  //   },
-  //   {
-  //     id: "2",
-  //     name: "imageSource",
-  //     placeholder:
-  //       "Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)",
-  //     value: newProduct.imageSource,
-  //     type: "text",
-  //     icon: <BsFillCameraFill />,
-  //     version: "minimalist",
-  //   },
-  //   {
-  //     id: "3",
-  //     name: "price",
-  //     placeholder: "Price",
-  //     value: newProduct.price ? newProduct.price : "",
-  //     type: "text",
-  //     icon: <MdOutlineEuro />,
-  //     version: "minimalist",
-  //   },
-  // ];
-
   return (
-    <AddFormstyled className="form" onSubmit={handleSubmit}>
-      <ImagePreview />
-      <div className="input-fields">
-        {inputTexts.map((input) => (
-          <TextInput
-            key={input.id}
-            name={input.name}
-            value={input.value}
-            placeholder={input.placeholder}
-            icon={input.icon}
-            // au lieu d'écrire tout le code du dessus, on peut faire un spread operator pour récupérer toutes les autres propriétés de l'objet input
-            // {...input} va récupérer toutes les propriétés de l'objet input et les passer en props au composant TextInput
-            onChange={handleChange}
-            version="minimalist"
-          />
-        ))}
-      </div>
-      <div className="submit">
-        <Button
-          label={"ajouter un nouveau produit au menu"}
-          type="submit"
-          className="submit-button"
-          version="success"
-        />
-        {isSubmitted && <SubmitMessage />}
-      </div>
-    </AddFormstyled>
+    <AdminForm
+      onSubmit={handleSubmit}
+      onChange={handleChange}
+      product={newProduct}
+      isSubmitted={isSubmitted}
+    >
+      <SubmitButton isSubmitted={isSubmitted} />
+    </AdminForm>
   );
 }
-const AddFormstyled = styled.form`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 8px;
-
-  height: 100%;
-  width: 70%;
-
-  .input-fields {
-    grid-area: 1/2/4/2;
-    display: grid;
-    grid-row-gap: 8px;
-  }
-
-  .submit {
-    grid-area: 4/2/-1/-1;
-    display: flex;
-    align-items: center;
-    position: relative;
-    top: 3px;
-
-    .submit-button {
-      /* width: 50%; */
-      height: 100%;
-    }
-  }
-`;

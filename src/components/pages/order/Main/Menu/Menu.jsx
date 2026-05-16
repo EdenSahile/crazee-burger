@@ -7,18 +7,49 @@ import { useContext } from "react";
 import OrderContext from "../../../../../Context/OrderContext";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
+import { checkIfProductIsClicked } from "./helper";
+import { EMPTY_PRODUCT } from "../../../../../enums/product";
 
 const IMAGE_BY_DEFAULT = "/src/assets/coming-soon.png";
 
 export default function Menu() {
-  const { menu, isModeAdmin, handleDelete, resetMenu } =
-    useContext(OrderContext);
+  const {
+    menu,
+    isModeAdmin,
+    handleDelete,
+    resetMenu,
+    setProductSelected,
+    productSelected,
+    setIsCollapsed,
+    setCurrentTabSelected,
+    titleEditRef,
+  } = useContext(OrderContext);
 
   if (menu.length === 0) {
     if (!isModeAdmin) return <EmptyMenuClient />;
     return <EmptyMenuAdmin onReset={resetMenu} />;
   }
 
+  const handleClick = async (idProductClicked) => {
+    if (!isModeAdmin) return;
+
+    await setIsCollapsed(false);
+    await setCurrentTabSelected("edit");
+
+    const productClickedOn = menu.find(
+      (product) => product.id === idProductClicked,
+    );
+    await setProductSelected(productClickedOn);
+    titleEditRef.current.focus();
+  };
+
+  const handleCardToDelete = (e, idProductToDelete) => {
+    e.stopPropagation();
+    handleDelete(idProductToDelete);
+    idProductToDelete === productSelected.id &&
+      setProductSelected(EMPTY_PRODUCT);
+    titleEditRef.current.focus();
+  };
   // affichage
   return (
     <MenuStyled className="menu">
@@ -30,7 +61,11 @@ export default function Menu() {
             imageSource={imageSource ? imageSource : IMAGE_BY_DEFAULT}
             leftDescription={formatPrice(price)}
             hasDeleteButton={isModeAdmin}
-            onDelete={() => handleDelete(id)}
+            onDelete={(e) => handleCardToDelete(e, id)}
+            onClick={() => handleClick(id)}
+            isHoverable={isModeAdmin}
+            // isSelected={id === productSelected.id}
+            isSelected={checkIfProductIsClicked(id, productSelected.id)}
           />
         );
       })}

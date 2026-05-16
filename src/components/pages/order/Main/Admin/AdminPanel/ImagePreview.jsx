@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../../theme";
 import OrderContext from "../../../../../../Context/OrderContext";
 
-export default function ImagePreview() {
-  const { newProduct } = useContext(OrderContext);
+export default function ImagePreview({ imageSource, title }) {
   return (
     <ImagePreviewstyled className="image-preview">
-      {newProduct.imageSource ? (
-        <img src={newProduct.imageSource} alt={newProduct.title} />
+      {imageSource ? (
+        <img src={imageSource} alt={title} />
       ) : (
         <div className="empty-image">Aucune image</div>
       )}

@@ -38,7 +38,6 @@ const exstraStylePrimary = css`
   white-space: nowrap; //prevents the text label from wrapping to the next line.
   text-decoration: none; //removes the text decoration in case you’re applying the .btn class to a link.
   line-height: 1;
-
   padding: 18px 24px;
   border-radius: 5px;
   font-size: 15px;
@@ -92,13 +91,14 @@ const exstraStyleSuccess = css`
   background: ${theme.colors.success};
   border: 1px solid ${theme.colors.success};
   border-radius: ${theme.borderRadius.round};
-  height: 35px;
+  height: 100%;
   padding: 0 1.5em;
   font-weight: ${theme.fonts.weights.semiBold};
-  :hover {
+  &:hover {
     background: ${theme.colors.white};
     color: ${theme.colors.success};
     border: 1px solid ${theme.colors.success};
+    transition: all 200ms ease-out;
   }
   :active {
     color: ${theme.colors.white};
