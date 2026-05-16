@@ -77,8 +77,8 @@ const MenuStyled = styled.div`
   background-color: ${theme.colors.background_white};
   box-shadow: ${theme.shadows.strong};
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   padding: 50px 50px 150px;
   grid-row-gap: 60px;
   justify-items: center;
