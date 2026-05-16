@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { theme } from "../../../../theme/index";
 export default function Basket() {
   return (
     <BasketStyled>
@@ -15,14 +15,16 @@ const BasketStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  background-color: #f5f5f7;
   .head {
-    background-color: red;
+    background-color: ${theme.colors.background_dark};
+    height: 70px;
   }
   .body {
-    background-color: blue;
+    background-color: ${theme.colors.background_white};
+    flex: 1;
   }
   .footer {
-    background-color: green;
+    background-color: ${theme.colors.background_dark};
+    height: 70px;
   }
 `;
