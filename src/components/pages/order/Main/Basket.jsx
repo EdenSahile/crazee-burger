@@ -25,6 +25,8 @@ const BasketStyled = styled.div`
   }
   .footer {
     background-color: ${theme.colors.background_dark};
+    border-radius: 0px 0px 0px 15px;
+
     height: 70px;
   }
 `;
