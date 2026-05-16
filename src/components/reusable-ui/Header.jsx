@@ -7,7 +7,7 @@ export default function Header({ children }) {
 }
 
 const HeaderStyled = styled.div`
-  border: 1px solid red;
   background-color: ${theme.colors.background_dark};
   height: 70px;
+  padding: 0 16px;
 `;
