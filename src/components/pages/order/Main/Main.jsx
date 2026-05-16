@@ -31,8 +31,6 @@ const MainStyled = styled.main`
   display: grid;
   grid-template-columns: 25% 1fr;
 
-  padding: 0 10px;
-
   .basket {
     background-color: pink;
   }
